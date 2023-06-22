@@ -168,6 +168,7 @@ private extension Siren {
             return
         }
         
+        print("Current installed version \(currentInstalledVersion)")
         // Check if the App Store version is newer than the currently installed version.
         guard currentInstalledVersion != currentAppStoreVersion else {
             resultsHandler?(.failure(.sameVersion))
