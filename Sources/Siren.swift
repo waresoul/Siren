@@ -167,7 +167,13 @@ private extension Siren {
             resultsHandler?(.failure(.appStoreVersionArrayFailure))
             return
         }
-
+        
+        // Check if the App Store version is newer than the currently installed version.
+        guard currentInstalledVersion == currentAppStoreVersion else {
+            resultsHandler?(.failure(.sameVersion))
+            return
+        }
+        
         // Check if the App Store version is newer than the currently installed version.
         guard DataParser.isAppStoreVersionNewer(installedVersion: currentInstalledVersion,
                                                 appStoreVersion: currentAppStoreVersion) else {

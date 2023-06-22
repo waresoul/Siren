@@ -30,6 +30,8 @@ public enum KnownError: LocalizedError {
     case missingBundleID
     /// No new update available.
     case noUpdateAvailable
+    /// No new update available.
+    case sameVersion
     /// Siren will not present an update alert if it performed one too recently. If you would like to present an alert every time Siren is called, please consider setting the `UpdatePromptFrequency.immediately` rule in `RulesManager`
     case recentlyPrompted
     /// The app has been released for X days, but Siren cannot prompt the user until Y (where Y > X) days have passed.
