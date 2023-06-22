@@ -70,6 +70,8 @@ public enum KnownError: LocalizedError {
             return "\(KnownError.sirenError) The app has been released for \(daysSinceRelease) days, but Siren cannot prompt the user until \(releasedForDays) days have passed."
         case .skipVersionUpdate(let installedVersion, let appStoreVersion):
             return "\(KnownError.sirenError) The user has opted to skip updating their current version of the app (\(installedVersion)) to the current App Store version (\(appStoreVersion))."
+        case .sameVersion:
+            return "\(KnownError.sirenError) You are on the same version as on the AppStore."
         }
     }
 
